@@ -3,13 +3,21 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    path: '', 
+    redirectTo: 'create-task', 
+    pathMatch: 'full'
   },
   {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
+    path: 'create-task',
+    loadChildren: () => import('./create-todo/create-todo.module').then( m => m.CreateTodoPageModule)
+  },
+  {
+    path: 'update-todo/:id',
+    loadChildren: () => import('./update-todo/update-todo.module').then( m => m.UpdateTodoPageModule)
+  },
+  {
+    path: 'todo-list',
+    loadChildren: () => import('./todo-list/todo-list.module').then( m => m.TodoListPageModule)
   },
 ];
 
@@ -19,4 +27,5 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
+
 export class AppRoutingModule { }

@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Create Task</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form [formGroup]="todoForm" (ngSubmit)="onSubmit()">
+    <ion-item>
+      <ion-label position="floating">Artist Name</ion-label>
+      <ion-input formControlName="artist_name" type="text" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Album Name</ion-label>
+      <ion-input formControlName="album_name" type="text" required>
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Total Number of Songs</ion-label>
+      <ion-input formControlName="total_songs" type="text" required>
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Album Release Date</ion-label>
+      <ion-input formControlName="release_date" type="Date" required>
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Label</ion-label>
+      <ion-input formControlName="label" type="text" required>
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Genre</ion-label>
+      <ion-input formControlName="genre" type="text" required>
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Lyrical Theme</ion-label>
+      <ion-input formControlName="lyrical_theme" type="text" required>
+      </ion-input>
+    </ion-item>
+
+    <ion-button class="ion-margin-top" type="submit" expand="block" color="success">Create</ion-button>
+  </form>
+</ion-content>
